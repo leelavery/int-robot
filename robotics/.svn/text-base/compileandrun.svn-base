@@ -1,0 +1,3 @@
+#!/bin/bash
+gradle installApp
+./build/install/robotics/bin/robotics $1

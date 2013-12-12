@@ -1,0 +1,216 @@
+package ex3;
+
+import geometry_msgs.Pose;
+
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
+import org.opencv.core.MatOfRect;
+import org.opencv.core.Rect;
+import org.opencv.core.Size;
+import org.opencv.objdetect.CascadeClassifier;
+
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamEvent;
+import com.github.sarxos.webcam.WebcamListener;
+
+public class PersonFinder implements WebcamListener, Runnable {
+
+	private static final double CAM_VIEWING_ANGLE = 75;
+
+	private HashSet<PersonFinderListener> listeners;
+	private Webcam webcam;
+	private CascadeClassifier haarFaceDetector;
+	private Main main;
+	private Thread thread;
+
+	private boolean looking;
+
+	public PersonFinder(Main main) {
+		this(main.getWebcam());
+		this.main = main;
+	}
+
+	public PersonFinder(Webcam webcam) {
+		listeners = new HashSet<PersonFinderListener>();
+		this.webcam = webcam;
+		haarFaceDetector = new CascadeClassifier("./resources/haarcascades/haarcascade_frontalface_default.xml");
+		webcam.addWebcamListener(this);
+		if (!webcam.isOpen()) {
+			webcam.open();
+		}
+		looking = true;
+		thread = new Thread(this);
+		thread.start();
+	}
+
+	public void startFaceDetection() {
+//		looking = true;
+//		if (!thread.isAlive()) {
+//			thread.start();
+//		}
+	}
+
+	public void stopFaceDetection() {
+//		looking = false;
+//		while (thread.isAlive()) {
+//			Thread.yield();
+//		}
+	}
+
+	public void stopFor(final long sleepTime) {
+		final PersonFinder pf = this;
+		pf.stopFaceDetection();
+		new Timer().schedule(new TimerTask() {
+			@Override
+			public void run() {
+				pf.startFaceDetection();
+			}
+		}, sleepTime);
+	}
+
+	public boolean isRunning() {
+		return looking;
+	}
+
+	@Override
+	public void run() {
+		MatOfRect temp = new MatOfRect();
+		ArrayList<Person> people = new ArrayList<Person>();
+
+		System.out.println("looking for faces");
+		while (looking) {
+			people.clear();
+			BufferedImage image = webcam.getImage();
+			byte[] data = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
+			Mat mat = new Mat(image.getHeight(), image.getWidth(), CvType.CV_8UC3);
+			mat.put(0, 0, data);
+			haarFaceDetector.detectMultiScale(mat, temp, 1.1, 14, 0, new Size(24, 24), new Size(180, 180));
+			for (Rect r : temp.toArray()) {
+				people.add(new Person(r));
+			}
+			notifyListeners(people.toArray(new Person[people.size()]));
+			Thread.yield();
+		}
+		System.out.println("not looking for faces");
+	}
+
+	public void addListener(PersonFinderListener listener) {
+		System.out.println("added listener");
+		listeners.add(listener);
+	}
+
+	public void removeListener(PersonFinderListener listener) {
+		listeners.remove(listener);
+	}
+
+	private void notifyListeners(Person[] data) {
+//		System.out.println("notifying listeners there are " + data.length + " people at: " + System.currentTimeMillis());
+		for (PersonFinderListener listener : listeners) {
+			listener.peopleFound(data);
+		}
+	}
+
+	@Override
+	public void webcamOpen(WebcamEvent we) {
+		System.out.println("cam open");
+		startFaceDetection();
+	}
+
+	@Override
+	public void webcamClosed(WebcamEvent we) {
+		System.out.println("cam closed");
+		stopFaceDetection();
+	}
+
+	@Override
+	public void webcamDisposed(WebcamEvent we) {
+	}
+
+	@Override
+	public void webcamImageObtained(WebcamEvent we) {
+	}
+
+	public class Person {
+		private final Rect rect;
+		private final long timestamp;
+
+		public Person(Rect rect) {
+			this.rect = rect;
+			this.timestamp = System.currentTimeMillis();
+		}
+
+		public Rect getRect() {
+			return rect;
+		}
+		
+		public long getTimestamp() {
+			return timestamp;
+		}
+
+		public Pose estimatePose() {
+
+			double angle = QuaternionHelper.getHeading(main.getAmclPose().getPose().getPose().getOrientation());
+			double distance = estimateDistance();
+
+			double width = webcam.getViewSize().width;
+			double midFace = rect.x + rect.width / 2;
+			double cOffset = (width / 2) - midFace;
+			double offsetAngle = Math.toRadians(((2 * cOffset / width) * CAM_VIEWING_ANGLE / 2));
+
+			double offsetX = Math.cos(angle + offsetAngle) * distance;
+			double offsetY = Math.sin(angle + offsetAngle) * distance;
+
+			double newX = main.getAmclPose().getPose().getPose().getPosition().getX() + offsetX;
+			double newY = main.getAmclPose().getPose().getPose().getPosition().getY() + offsetY;
+
+			Pose personPose = main.getMessageFactory().newFromType(Pose._TYPE);
+			personPose.getPosition().setX(newX);
+			personPose.getPosition().setY(newY);
+			personPose.setOrientation(main.getQuaternionHelper().rotateQuaternion(main.getAmclPose().getPose().getPose().getOrientation(), offsetAngle));
+
+			// System.out.println("angle = " + angle + " distance: " + distance);
+			return personPose;
+		}
+
+		public double estimateDistance() {
+			int width = rect.width;
+			if (width >= 170) {
+				return 0.3;
+			} else if (width >= 120 && width < 170) {
+				return 0.6;
+			} else if (width >= 90 && width < 120) {
+				return 0.9;
+			} else if (width >= 68 && width < 90) {
+				return 1.2;
+			} else if (width >= 56 && width < 68) {
+				return 1.5;
+			} else if (width >= 52 && width < 56) {
+				return 1.8;
+			} else if (width >= 48 && width < 52) {
+				return 2.1;
+			} else if (width >= 41 && width < 48) {
+				return 2.4;
+			} else if (width >= 35 && width < 41) {
+				return 2.7;
+			} else if (width >= 32 && width < 35) {
+				return 3.0;
+			} else {
+				return 3.3;
+			}
+		}
+	}
+
+	public static interface PersonFinderListener {
+
+		public void peopleFound(Person[] people);
+
+	}
+
+}

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/int-robot/leonard/!svn/ver/26/robotics/resources/lbpcascades
+END
+lbpcascade_profileface.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/int-robot/leonard/!svn/ver/26/robotics/resources/lbpcascades/lbpcascade_profileface.xml
+END
+lbpcascade_silverware.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/int-robot/leonard/!svn/ver/26/robotics/resources/lbpcascades/lbpcascade_silverware.xml
+END
+lbpcascade_frontalface.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/int-robot/leonard/!svn/ver/26/robotics/resources/lbpcascades/lbpcascade_frontalface.xml
+END

@@ -1,0 +1,431 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native
+END
+libopencv_test_core_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_core_pch_dephelp.a
+END
+libopencv_test_gpu_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_gpu_pch_dephelp.a
+END
+libopencv_nonfree.a
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_nonfree.a
+END
+libopencv_test_objdetect_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_objdetect_pch_dephelp.a
+END
+libopencv_objdetect_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_objdetect_pch_dephelp.a
+END
+libopencv_legacy_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_legacy_pch_dephelp.a
+END
+libopencv_contrib.a
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_contrib.a
+END
+libopencv_imgproc.a
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_imgproc.a
+END
+libopencv_perf_gpu_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_gpu_pch_dephelp.a
+END
+libopencv_perf_stitching_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_stitching_pch_dephelp.a
+END
+libopencv_ocl_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_ocl_pch_dephelp.a
+END
+libopencv_perf_video_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_video_pch_dephelp.a
+END
+libopencv_test_highgui_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_highgui_pch_dephelp.a
+END
+libopencv_perf_superres_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_superres_pch_dephelp.a
+END
+libopencv_videostab.a
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_videostab.a
+END
+libopencv_ts.a
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_ts.a
+END
+libopencv_nonfree_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_nonfree_pch_dephelp.a
+END
+libopencv_test_calib3d_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_calib3d_pch_dephelp.a
+END
+libopencv_perf_highgui_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_highgui_pch_dephelp.a
+END
+libopencv_gpu.a
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_gpu.a
+END
+libopencv_contrib_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_contrib_pch_dephelp.a
+END
+libopencv_imgproc_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_imgproc_pch_dephelp.a
+END
+libopencv_stitching.a
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_stitching.a
+END
+libopencv_flann.a
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_flann.a
+END
+libopencv_perf_core_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_core_pch_dephelp.a
+END
+libopencv_perf_photo_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_photo_pch_dephelp.a
+END
+libopencv_test_ml_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_ml_pch_dephelp.a
+END
+libopencv_video.a
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_video.a
+END
+libopencv_superres.a
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_superres.a
+END
+libopencv_ml.a
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_ml.a
+END
+libopencv_perf_calib3d_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_calib3d_pch_dephelp.a
+END
+libopencv_perf_features2d_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_features2d_pch_dephelp.a
+END
+libopencv_videostab_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_videostab_pch_dephelp.a
+END
+libopencv_java247.so
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_java247.so
+END
+libopencv_ts_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_ts_pch_dephelp.a
+END
+libopencv_highgui.a
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_highgui.a
+END
+libopencv_test_stitching_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_stitching_pch_dephelp.a
+END
+libopencv_gpu_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_gpu_pch_dephelp.a
+END
+libopencv_stitching_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_stitching_pch_dephelp.a
+END
+libopencv_test_flann_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_flann_pch_dephelp.a
+END
+libopencv_core.a
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_core.a
+END
+libopencv_photo.a
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_photo.a
+END
+libopencv_flann_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_flann_pch_dephelp.a
+END
+libopencv_test_features2d_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_features2d_pch_dephelp.a
+END
+libopencv_test_video_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_video_pch_dephelp.a
+END
+libopencv_calib3d.a
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_calib3d.a
+END
+libopencv_video_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_video_pch_dephelp.a
+END
+libopencv_superres_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_superres_pch_dephelp.a
+END
+libopencv_ml_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_ml_pch_dephelp.a
+END
+libopencv_features2d.a
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_features2d.a
+END
+libopencv_test_ocl_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_ocl_pch_dephelp.a
+END
+libopencv_perf_objdetect_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_objdetect_pch_dephelp.a
+END
+libopencv_highgui_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_highgui_pch_dephelp.a
+END
+libopencv_test_photo_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_photo_pch_dephelp.a
+END
+libopencv_core_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_core_pch_dephelp.a
+END
+libopencv_photo_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_photo_pch_dephelp.a
+END
+libopencv_perf_ocl_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_ocl_pch_dephelp.a
+END
+libopencv_test_nonfree_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_nonfree_pch_dephelp.a
+END
+libopencv_test_imgproc_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_imgproc_pch_dephelp.a
+END
+libopencv_test_contrib_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_contrib_pch_dephelp.a
+END
+cv2.so
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/cv2.so
+END
+libopencv_haartraining_engine.a
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_haartraining_engine.a
+END
+libopencv_calib3d_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_calib3d_pch_dephelp.a
+END
+libopencv_test_legacy_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_legacy_pch_dephelp.a
+END
+libopencv_features2d_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_features2d_pch_dephelp.a
+END
+libopencv_test_superres_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_test_superres_pch_dephelp.a
+END
+libopencv_perf_nonfree_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_nonfree_pch_dephelp.a
+END
+libopencv_objdetect.a
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_objdetect.a
+END
+libopencv_legacy.a
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_legacy.a
+END
+libopencv_perf_imgproc_pch_dephelp.a
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_perf_imgproc_pch_dephelp.a
+END
+libopencv_ocl.a
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/int-robot/leonard/!svn/ver/34/robotics/libs/opencv-native/libopencv_ocl.a
+END

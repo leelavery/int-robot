@@ -1,0 +1,101 @@
+package ex3.deprecated;
+
+import org.ros.message.MessageListener;
+import org.ros.namespace.GraphName;
+import org.ros.node.AbstractNodeMain;
+import org.ros.node.ConnectedNode;
+import org.ros.node.topic.Publisher;
+import org.ros.node.topic.Subscriber;
+
+import ex3.MP3;
+
+import std_msgs.UInt16;
+import std_msgs.UInt16MultiArray;
+
+public class State extends AbstractNodeMain {
+	
+	public static final int ROOM = 0;
+	public static final int POINT = 1;
+
+	private Subscriber<UInt16MultiArray> target;
+	private Subscriber<UInt16> state;
+	private int currentState;
+	private int targetType;
+	private int targetNum;
+	private MP3 mp3;
+	
+	public void onStart(ConnectedNode node) {
+		mp3 = new MP3();
+		target = node.newSubscriber("ex3/target", UInt16MultiArray._TYPE);
+		target.addMessageListener(new MessageListener<UInt16MultiArray>() {
+			public void onNewMessage(UInt16MultiArray arg0) {
+				if(arg0.getData().length == 2) {
+					targetType = arg0.getData()[0];
+					targetNum = arg0.getData()[1];
+				}
+				if(targetType == ROOM && targetNum == 1) {
+					// going to room 1
+					mp3.play("room-one-going");
+				}
+				else if(targetType == ROOM && targetNum == 2) {
+					// going to room 2
+					mp3.play("room-two-going");
+				}
+				else if(targetType == POINT && targetNum == 2) {
+					// going to far end
+					mp3.play("far-end-going");
+				}
+				else if(targetType == POINT && targetNum == 3) {
+					// going to near end
+					mp3.play("near-end-going");
+				}
+				System.out.println("Target is " + targetType + ": " + targetNum);
+			}
+		});
+		state = node.newSubscriber("ex3/state", UInt16._TYPE);
+		state.addMessageListener(new MessageListener<UInt16>() {
+			public void onNewMessage(UInt16 arg0) {
+				int val = arg0.getData();
+				switch(val) {
+				case 0:
+					// in corridor
+					mp3.play("corridor");
+					currentState = 0;
+					break;
+				case 1:
+					// in room 1
+					mp3.play("room-one");
+					currentState = 1;
+					break;
+				case 2:
+					// in room 2
+					mp3.play("room-two");
+					currentState = 2;
+					break;
+				case 3:
+					// at the far end
+					mp3.play("far-end");
+					currentState = 3;
+					break;
+				case 4:
+					// at the near end
+					mp3.play("near-end");
+					currentState = 4;
+					break;
+				}
+				System.out.println("state is now " + currentState);
+			}
+		});
+	}
+	
+	public GraphName getDefaultNodeName() {
+		return GraphName.of("ex3/state");
+	}
+
+	public static void setState(Publisher<UInt16> state, int stateN) {
+		UInt16 s = state.newMessage();
+		s.setData((short) stateN);
+		state.publish(s);
+	}
+	
+}

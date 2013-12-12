@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/int-robot/leonard/!svn/ver/41/robotics/src/main/java/ex3/behaviours
+END
+Arbitrator.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/int-robot/leonard/!svn/ver/27/robotics/src/main/java/ex3/behaviours/Arbitrator.java
+END
+Explore.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/int-robot/leonard/!svn/ver/32/robotics/src/main/java/ex3/behaviours/Explore.java
+END
+FindARoom.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/int-robot/leonard/!svn/ver/40/robotics/src/main/java/ex3/behaviours/FindARoom.java
+END
+Behaviour.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/int-robot/leonard/!svn/ver/23/robotics/src/main/java/ex3/behaviours/Behaviour.java
+END
+HumanDetection.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/int-robot/leonard/!svn/ver/41/robotics/src/main/java/ex3/behaviours/HumanDetection.java
+END

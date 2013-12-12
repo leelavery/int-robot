@@ -1,0 +1,5 @@
+org.gradle.daemon=true
+systemProp.http.proxyHost=webcache.cs.bham.ac.uk
+systemProp.http.proxyPort=3128
+systemProp.https.proxyHost=webcache.cs.bham.ac.uk
+systemProp.https.proxyPort=3128

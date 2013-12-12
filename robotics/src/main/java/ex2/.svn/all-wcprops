@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/int-robot/leonard/!svn/ver/19/robotics/src/main/java/ex2
+END
+AbstractLocaliser.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/int-robot/leonard/!svn/ver/7/robotics/src/main/java/ex2/AbstractLocaliser.java
+END
+Cluster.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/int-robot/leonard/!svn/ver/15/robotics/src/main/java/ex2/Cluster.java
+END
+PFLocaliser.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/int-robot/leonard/!svn/ver/19/robotics/src/main/java/ex2/PFLocaliser.java
+END
+WeightedPose.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/int-robot/leonard/!svn/ver/15/robotics/src/main/java/ex2/WeightedPose.java
+END
+DBScan.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/int-robot/leonard/!svn/ver/19/robotics/src/main/java/ex2/DBScan.java
+END
+SensorModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/int-robot/leonard/!svn/ver/7/robotics/src/main/java/ex2/SensorModel.java
+END
+PFLocalisationNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/int-robot/leonard/!svn/ver/15/robotics/src/main/java/ex2/PFLocalisationNode.java
+END

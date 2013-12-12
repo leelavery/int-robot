@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/int-robot/leonard/!svn/ver/42/robotics
+END
+compileandrun
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/int-robot/leonard/!svn/ver/33/robotics/compileandrun
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/int-robot/leonard/!svn/ver/33/robotics/manifest.xml
+END
+gradle.properties
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/int-robot/leonard/!svn/ver/33/robotics/gradle.properties
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/int-robot/leonard/!svn/ver/33/robotics/mainpage.dox
+END
+build.gradle
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/int-robot/leonard/!svn/ver/33/robotics/build.gradle
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/int-robot/leonard/!svn/ver/33/robotics/build.xml
+END

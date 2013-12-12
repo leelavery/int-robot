@@ -1,0 +1,159 @@
+package ex3;
+
+import ex3.behaviours.Arbitrator;
+import ex3.behaviours.Behaviour;
+import ex3.behaviours.Explore;
+import ex3.behaviours.FindARoom;
+import ex3.behaviours.HumanDetection;
+import geometry_msgs.PoseWithCovarianceStamped;
+import geometry_msgs.Twist;
+import nav_msgs.OccupancyGrid;
+
+import org.ros.message.MessageFactory;
+import org.ros.message.MessageListener;
+import org.ros.namespace.GraphName;
+import org.ros.node.AbstractNodeMain;
+import org.ros.node.ConnectedNode;
+import org.ros.node.NodeConfiguration;
+import org.ros.node.topic.Publisher;
+import org.ros.node.topic.Subscriber;
+
+import sensor_msgs.LaserScan;
+
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamResolution;
+
+public class Main extends AbstractNodeMain {
+
+	private PoseWithCovarianceStamped amclPose;
+	private OccupancyGrid mapData;
+	private LaserScan laserData;
+	private ConnectedNode node;
+	private MessageFactory messageFactory;
+	private Publisher<Twist> cmdVel;
+	private Webcam webcam;
+	private PersonFinder personFinder;
+	private Room meetingRoom = Room.ROOM1;
+	private Move move;
+	private Speech speech;
+	private MP3 mp3;
+	private QuaternionHelper quaternionHelper;
+
+	public void onStart(ConnectedNode node) {
+		System.load("/data/private/robot/workspace/robotics/libs/opencv-native/libopencv_java247.so");
+		this.node = node;
+		this.messageFactory = NodeConfiguration.newPrivate().getTopicMessageFactory();
+
+		cmdVel = node.newPublisher("cmd_vel", Twist._TYPE);
+
+		Subscriber<OccupancyGrid> map = node.newSubscriber("map", OccupancyGrid._TYPE);
+		Subscriber<PoseWithCovarianceStamped> amcl = node.newSubscriber("amcl_pose", PoseWithCovarianceStamped._TYPE);
+		Subscriber<LaserScan> laser = node.newSubscriber("base_scan", LaserScan._TYPE);
+
+		map.addMessageListener(new MessageListener<OccupancyGrid>() {
+			@Override
+			public void onNewMessage(OccupancyGrid arg0) {
+				mapData = arg0;
+			}
+		});
+		
+		amcl.addMessageListener(new MessageListener<PoseWithCovarianceStamped>() {
+			@Override
+			public void onNewMessage(PoseWithCovarianceStamped arg0) {
+				amclPose = arg0;
+			}
+		});
+		
+		laser.addMessageListener(new MessageListener<LaserScan>() {
+			@Override
+			public void onNewMessage(LaserScan arg0) {
+				laserData = arg0;
+			}
+		});
+		
+		quaternionHelper = new QuaternionHelper(node.getTopicMessageFactory());
+		mp3 = new MP3();
+		speech = new Speech(mp3);
+		move = new Move(this);
+		speech.setTrainingData();	                                                                                                                                                                                                 
+		
+		System.out.println("Waiting for stuff...");
+		while (mapData == null || amclPose == null || laserData == null) {
+				Thread.yield();
+		}
+		
+		webcam = Webcam.getWebcams().get(Webcam.getWebcams().size() -1);
+		webcam.setViewSize(WebcamResolution.VGA.getSize());
+		personFinder = new PersonFinder(this);
+		FaceDetectionGUI webcamGui = new FaceDetectionGUI(webcam, 30);
+		personFinder.addListener(webcamGui);
+		
+		Behaviour[] behaviours = new Behaviour[3];
+		behaviours[0] = new Explore(this);
+		behaviours[1] = new HumanDetection(this);
+		behaviours[2] = new FindARoom(this);
+		new Arbitrator(behaviours).start();
+	}
+	
+	public Webcam getWebcam() {
+		return webcam;
+	}
+	
+	public PoseWithCovarianceStamped getAmclPose() {
+		return amclPose;
+	}
+
+	public OccupancyGrid getMap() {
+		return mapData;
+	}
+
+	public LaserScan getLaserData() {
+		return laserData;
+	}
+
+	@Override
+	public GraphName getDefaultNodeName() {
+		return GraphName.of("ex3/Main");
+	}
+
+	public ConnectedNode getNode() {
+		return node;
+	}
+
+	public MessageFactory getMessageFactory() {
+		return messageFactory;
+	}
+	
+	public Publisher<Twist> getCmdVelPublisher(){
+		return cmdVel;
+	}
+
+	public PersonFinder getPersonFinder() {
+		return personFinder;
+	}
+
+	public synchronized Room getMeetingRoom() {
+		return meetingRoom;
+	}
+	
+	public synchronized void setMeetingRoom(Room room) {
+		this.meetingRoom = room;
+	}
+
+	public Move getMove() {
+		return move;
+	}
+
+	public Speech getSpeech() {
+		return speech;
+	}
+	
+	public MP3 getMP3() {
+		return mp3;
+	}
+
+	public QuaternionHelper getQuaternionHelper() {
+		return quaternionHelper;
+	}
+	
+}
